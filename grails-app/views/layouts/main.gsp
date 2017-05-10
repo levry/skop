@@ -31,7 +31,8 @@
             </div>
             <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
                 <ul class="nav navbar-nav navbar-right">
-                    <g:pageProperty name="page.nav" />
+                    <li><g:link controller="Operation" action="index">Ops</g:link></li>
+                    <li><g:link controller="MCC" action="index">MMC</g:link></li>
                 </ul>
             </div>
         </div>
