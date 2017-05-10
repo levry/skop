@@ -25,7 +25,8 @@ class OpsCriteria implements ByCriteria {
         def criteria = Operation.createCriteria()
         criteria.list(args) {
             if (category) {
-                eq('mcc.category.id', category.id)
+                createAlias 'mcc', 'mcc'
+                eq('mcc.category', category)
             }
             order('date', 'desc')
         }

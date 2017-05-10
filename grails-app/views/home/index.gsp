@@ -16,7 +16,7 @@
         <div class="item">
             <i class="large suitcase middle aligned icon"></i>
             <div class="content">
-                <a class="header">${cat.category.name}</a>
+                <a class="header" href="${createLink(params: [category: cat.category.id])}">${cat.category.name}</a>
                 <div class="description">${cat.value.toPlainString()}</div>
             </div>
         </div>
@@ -24,7 +24,7 @@
     </div>
 
     <h1 class="ui header">Operations</h1>
-    %{-- TODO ops --}%
+    %{-- TODO ops, pagination --}%
     <table class="ui selectable single line table">
         <thead>
         <tr>
