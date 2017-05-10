@@ -9,7 +9,7 @@ class MCC {
     Category category
 
     static constraints = {
-        code min: (short)0, max: (short)9999
+        code unique: true, min: (short)0, max: (short)9999
         category nullable: false
     }
 

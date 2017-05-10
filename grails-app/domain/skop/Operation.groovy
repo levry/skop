@@ -8,6 +8,7 @@ import skop.data.Money
 class Operation {
 
     Date date
+    // TODO rename to amount
     Money payment
     Money discharge
     String location
@@ -18,4 +19,8 @@ class Operation {
     }
 
     static embedded = ['payment', 'discharge']
+
+    Category getCategory() {
+        mcc.category
+    }
 }
