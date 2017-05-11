@@ -1,14 +1,13 @@
 <!doctype html>
 <html>
 <head>
-    <meta name="layout" content="base"/>
+    <meta name="layout" content="main"/>
     <title>Welcome to Ops</title>
 
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
 </head>
 <body>
 
-<div class="ui main container">
     <h1 class="ui header">Categories</h1>
 
     <div class="ui relaxed divided list">
@@ -54,7 +53,6 @@
         </tr>
         </tfoot>
     </table>
-</div>
 
 </body>
 </html>

@@ -6,9 +6,9 @@ class MCCController {
 
     static scaffold = MCC
 
-    def list(Integer max) {
+    def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        [items: listAllResources(params), itemsCount: countResources()]
+        [mccs: listAllResources(params), mccCount: countResources()]
     }
 
 }
