@@ -10,8 +10,7 @@ class Operation {
 
     @BindingFormat('yyyy-MM-dd')
     Date date
-    // TODO rename to amount
-    Money payment
+    Money amount
     Money discharge
     String location
     MCC mcc
@@ -20,13 +19,13 @@ class Operation {
         location blank: false
     }
 
-    static embedded = ['payment', 'discharge']
+    static embedded = ['amount', 'discharge']
 
     Category getCategory() {
         mcc.category
     }
 
     boolean equalsDischargeCurrency() {
-        payment.currency == discharge.currency
+        amount.currency == discharge.currency
     }
 }

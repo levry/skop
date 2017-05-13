@@ -28,7 +28,7 @@
         <tr>
             <th><g:message code="operation.category.label" default="Category" /></th>
             <th><g:message code="operation.date.label" default="Date"/></th>
-            <th><g:message code="operation.payment.label" default="Payment" /></th>
+            <th><g:message code="operation.amount.label" default="Amount" /></th>
             <th><g:message code="operation.location.label" default="Location" /></th>
         </tr>
         </thead>
@@ -37,7 +37,7 @@
             <tr>
                 <td>${op.category.name}</td>
                 <td>${op.date.format('dd.MM.yyyy HH.mm')}</td>
-                <td>${op.payment}
+                <td>${op.amount}
                 <g:if test="${!op.equalsDischargeCurrency()}">
                     <br><small>${op.discharge}</small>
                 </g:if>

@@ -19,7 +19,7 @@
         <thead>
         <tr>
             <th><g:message code="operation.date.label" default="Date" /></th>
-            <th><g:message code="operation.payment.label" default="Payment" /></th>
+            <th><g:message code="operation.amount.label" default="Amount" /></th>
             <th><g:message code="operation.discharge.label" default="Discharge" /></th>
             <th><g:message code="operation.location.label" default="Location" /></th>
             <th><g:message code="operation.mcc.label" default="MCC" /></th>
@@ -29,7 +29,7 @@
         <g:each in="${operationList}" var="op" status="i">
             <tr>
                 <td><g:link method="GET" resource="${op}">${op.date.format('dd.MM.yyyy HH.mm')}</g:link></td>
-                <td><f:display bean="${op}" property="payment" displayStyle="table"/></td>
+                <td><f:display bean="${op}" property="amount" displayStyle="table"/></td>
                 <td><f:display bean="${op}" property="discharge" displayStyle="table" /></td>
                 <td><f:display bean="${op}" property="location" displayStyle="table" /></td>
                 <td><f:display bean="${op}" property="mcc.code" displayStyle="table" /></td>

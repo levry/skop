@@ -27,7 +27,7 @@
 
     <g:form name="op-create" resource="${this.operation}" method="POST" class="ui form">
         <f:field bean="${this.operation}" property="date" />
-        <f:field bean="${this.operation}" property="payment" />
+        <f:field bean="${this.operation}" property="amount" />
         <f:field bean="${this.operation}" property="discharge" />
         <f:field bean="${this.operation}" property="mcc" />
         <f:field bean="${this.operation}" property="location" />
