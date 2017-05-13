@@ -15,7 +15,12 @@
             <i class="large suitcase middle aligned icon"></i>
             <div class="content">
                 <a class="header" href="${createLink(params: [category: cat.category.id])}">${cat.category.name}</a>
-                <div class="description">${cat.value.toPlainString()}</div>
+                <div class="description">
+                    <g:message code="operation.discharge.title"/>:
+                    <g:each in="${cat.values}" var="v" >
+                        <span><small>${v}</small></span>
+                    </g:each>
+                </div>
             </div>
         </div>
         </g:each>

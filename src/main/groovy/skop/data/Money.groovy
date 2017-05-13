@@ -30,4 +30,8 @@ class Money {
     String toString() {
         "${currency.symbol}${value.toPlainString()}"
     }
+
+    static money(BigDecimal value, String currencyCode) {
+        new Money(value: value, currency: Currency.getInstance(currencyCode))
+    }
 }

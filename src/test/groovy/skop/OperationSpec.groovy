@@ -1,22 +1,28 @@
 package skop
 
 import grails.test.mixin.TestFor
+import skop.data.Money
 import spock.lang.Specification
 
 /**
- * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
+ * @author levry
  */
 @TestFor(Operation)
 class OperationSpec extends Specification {
 
-    def setup() {
-    }
+    def "equals discharge currency"() {
+        given:
+        def operation = new Operation(
+                amount: new Money(value: 0, currency: Currency.getInstance(amountCurrency)),
+                discharge: new Money(value: 0, currency: Currency.getInstance(dischargeCurrency))
+        )
 
-    def cleanup() {
-    }
+        expect:
+        operation.equalsDischargeCurrency() == equalsDischarge
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+        where:
+        amountCurrency | dischargeCurrency || equalsDischarge
+        'EUR'          | 'EUR'             || true
+        'EUR'          | 'USD'             || false
     }
 }
