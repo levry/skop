@@ -1,5 +1,6 @@
 package skop
 
+import grails.databinding.BindingFormat
 import skop.data.Money
 
 /**
@@ -7,6 +8,7 @@ import skop.data.Money
  */
 class Operation {
 
+    @BindingFormat('yyyy-MM-dd')
     Date date
     // TODO rename to amount
     Money payment
@@ -22,5 +24,9 @@ class Operation {
 
     Category getCategory() {
         mcc.category
+    }
+
+    boolean equalsDischargeCurrency() {
+        payment.currency == discharge.currency
     }
 }

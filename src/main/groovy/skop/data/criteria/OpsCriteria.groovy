@@ -20,7 +20,7 @@ class OpsCriteria implements ByCriteria {
         if(offset) {
             args.offset = offset
         }
-        args.max = Math.min(max ?: 10, 100)
+        args.max = Math.min(max ?: 5, 10)
 
         def criteria = Operation.createCriteria()
         criteria.list(args) {

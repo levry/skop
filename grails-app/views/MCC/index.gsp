@@ -2,11 +2,14 @@
 <html>
 <head>
     <meta name="layout" content="main" />
+    <g:set var="entityName" value="${message(code: 'MCC.label', default: 'MCC')}" />
+    <title><g:message code="default.show.label" args="[entityName]" /></title>
 </head>
 <body>
-    <h1 class="ui header"><g:message code="default.list.label" args="[entityName]" /></h1>
-
-    <g:link class="ui button" action="create">Добавить</g:link>
+    <div class="ui small secondary menu">
+        <div class="header item"><g:message code="default.list.label" args="[entityName]" /></div>
+        <g:link class="item" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+    </div>
 
     <g:if test="${flash.message}">
         <div class="message">${flash.message}</div>
@@ -15,8 +18,8 @@
     <table class="ui selectable single line table">
         <thead>
             <tr>
-                <th>mcc</th>
-                <th>Category</th>
+                <th><g:message code="MMC.code.label" default="Code" /></th>
+                <th><g:message code="MCC.category.label" default="Category" /></th>
             </tr>
         </thead>
         <tbody>

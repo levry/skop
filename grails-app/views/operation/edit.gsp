@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main" />
-    <g:set var="entityName" value="${message(code: 'MCC.label', default: 'MCC')}" />
+    <g:set var="entityName" value="${message(code: 'operation.label', default: 'Operation')}" />
     <title><g:message code="default.edit.label" args="[entityName]" /></title>
 </head>
 <body>
@@ -13,22 +13,22 @@
     </div>
 
     <g:if test="${flash.message}">
-    <div class="message">${flash.message}</div>
+        <div class="message">${flash.message}</div>
     </g:if>
 
-    <g:hasErrors bean="${this.MCC}">
+    <g:hasErrors bean="${this.operation}">
         <div class="ui error message">
             <ul class="list">
-                <g:eachError bean="${this.MCC}" var="error">
+                <g:eachError bean="${this.operation}" var="error">
                     <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
                 </g:eachError>
             </ul>
         </div>
     </g:hasErrors>
 
-    <g:form class="ui form" resource="${this.MCC}" method="PUT">
-        <g:hiddenField name="version" value="${this.MCC?.version}" />
-        <f:all bean="MCC"/>
+    <g:form class="ui form" resource="${this.operation}" method="PUT">
+        <g:hiddenField name="version" value="${this.operation?.version}" />
+        <f:all bean="operation"/>
         <input class="ui button" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
     </g:form>
 </body>

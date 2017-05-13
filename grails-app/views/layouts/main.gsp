@@ -19,8 +19,8 @@
                 <asset:image src="grails-cupsonly-logo-white.svg" />
                 <g:message code="default.home.label"/>
             </a>
-            <g:link controller="Operation" action="index" class="item">Ops</g:link>
-            <g:link controller="MCC" action="index" class="item">MCC</g:link>
+            <g:link controller="Operation" action="index" class="item"><g:message code="operation.menu"/></g:link>
+            <g:link controller="MCC" action="index" class="item"><g:message code="MCC.menu" /></g:link>
         </div>
     </div>
 
