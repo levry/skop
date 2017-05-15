@@ -26,11 +26,49 @@
     </g:hasErrors>
 
     <g:form name="op-create" resource="${this.operation}" method="POST" class="ui form">
-        <f:field bean="${this.operation}" property="date" />
-        <f:field bean="${this.operation}" property="amount" />
-        <f:field bean="${this.operation}" property="discharge" />
-        <f:field bean="${this.operation}" property="mcc" />
-        <f:field bean="${this.operation}" property="location" />
+        <div class="field">
+            <label for="date"><g:message code="operation.date.label" /></label>
+            <input type="datetime-local" id="date" name="date" required value="${this.operation?.date?.format('yyyy-MM-dd\'T\'HH:mm')}" >
+        </div>
+        <div class="field">
+            <label><g:message code="operation.amount.label" /></label>
+            <div class="two fields">
+                <div class="field">
+                    <input type="number" name="amount.value" id="amount.value"
+                           required placeholder="${message(code: 'operation.amount.label')}"
+                           value="${this.operation?.amount?.value}">
+                </div>
+                <div class="field">
+                    <g:currencySelect name="amount.currency" class="ui dropdown"
+                                      value="${this.operation?.amount?.currency}" />
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <label><g:message code="operation.discharge.label" /></label>
+            <div class="two fields">
+                <div class="field">
+                    <input type="number" name="discharge.value" id="discharge.value"
+                           required placeholder="${message(code: 'operation.discharge.label')}"
+                           value="${this.operation?.discharge?.value}">
+                </div>
+                <div class="field">
+                    <g:currencySelect name="discharge.currency" class="ui dropdown"
+                                      value="${this.operation?.discharge?.currency}"/>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <label for="mcc"><g:message code="operation.mcc.label" /></label>
+            <g:select name="mcc" from="${skop.MCC.list()}" optionKey="id" optionValue="code"
+                      value="${this.operation?.mcc?.id}" />
+        </div>
+        <div class="field">
+            <label for="location"><g:message code="operation.location.label" /></label>
+            <input type="text" id="location" name="location"
+                   required placeholder="${message(code: 'operation.location.label')}"
+                   value="${this.operation?.location}">
+        </div>
         <g:submitButton name="create" class="ui button" value="${message(code: 'default.button.create.label', default: 'Create')}" />
     </g:form>
 </body>
