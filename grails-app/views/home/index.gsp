@@ -9,16 +9,16 @@
 <body>
     <h1 class="ui header"><g:message code="category.list" /></h1>
 
-    <div class="ui relaxed divided list">
+    <div class="ui divided items">
         <g:each in="${cats}" var="cat" status="i">
         <div class="item">
             <i class="large suitcase middle aligned icon"></i>
             <div class="content">
                 <a class="header" href="${createLink(params: [category: cat.category.id])}">${cat.category.name}</a>
-                <div class="description">
-                    <g:message code="operation.discharge.title"/>:
+                <div class="meta">
+                    <span class="stay"><g:message code="operation.discharge.title"/>:</span>
                     <g:each in="${cat.values}" var="v" >
-                        <span><small>${v}</small></span>
+                        <span class="price"><small>${v}</small></span>
                     </g:each>
                 </div>
             </div>
