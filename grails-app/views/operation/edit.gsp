@@ -2,14 +2,13 @@
 <html>
 <head>
     <meta name="layout" content="main" />
-    <g:set var="entityName" value="${message(code: 'operation.label', default: 'Operation')}" />
-    <title><g:message code="default.edit.label" args="[entityName]" /></title>
+    <title><g:message code="operation.edit.label" /></title>
 </head>
 <body>
     <div class="ui small secondary menu">
-        <div class="header item"><g:message code="default.edit.label" args="[entityName]" /></div>
-        <g:link class="item" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link>
-        <g:link class="item" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link>
+        <div class="header item"><g:message code="operation.edit.label" /></div>
+        <g:link class="item" action="index"><g:message code="operation.list" /></g:link>
+        <g:link class="item" action="create"><g:message code="operation.new.label" /></g:link>
     </div>
 
     <g:if test="${flash.message}">
