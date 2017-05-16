@@ -1,19 +1,13 @@
 package skop
 
-import skop.data.criteria.ByCriteria
+import skop.data.criteria.ByCriterior
 import skop.data.criteria.OpsCriteria
 import skop.data.criteria.OpsDischargeCriteria
 
 /**
  * @author levry
  */
-class HomeController {
-
-    private def byCriteria(Class<? extends ByCriteria> clazz, source = params) {
-        def criteria = clazz.newInstance()
-        bindData(criteria, source)
-        criteria.list()
-    }
+class HomeController implements ByCriterior {
 
     def index() {
         def cats = byCriteria(OpsDischargeCriteria)
