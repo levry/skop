@@ -17,15 +17,14 @@ class MCCSpec extends Specification {
 
         expect:
         domain.validate(['code']) == valid
-        domain.errors['code']?.code == expectedErrorCode
 
         where:
-        value  | valid || expectedErrorCode
-        -1     | false || 'range.toosmall'
-        0      | true  || null
-        1      | true  || null
-        100    | true  || null
-        9999   | true  || null
-        10000  | false || 'range.toobig'
+        value  || valid
+        -1     || false
+        0      || true
+        1      || true
+        100    || true
+        9999   || true
+        10000  || false
     }
 }

@@ -7,11 +7,9 @@ import skop.Category
  * @author levry
  */
 @CompileStatic
-class CategoryInitializer {
+class DataInitializer {
 
-    private final def names = ['Продукты', 'Кафе/рестораны', 'Транспорт', 'Развлечения']
-
-    void init() {
+    static void initCategories(List<String> names) {
         names.each { name ->
             new Category(name: name).save()
         }

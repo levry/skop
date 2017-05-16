@@ -7,7 +7,6 @@ import groovy.transform.CompileStatic
 /**
  * @author levry
  */
-// TODO test it
 @CompileStatic
 trait ByCriterior implements DataBinder, WebAttributes {
 

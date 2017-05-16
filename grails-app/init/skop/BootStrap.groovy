@@ -1,11 +1,11 @@
 package skop
 
-import skop.data.CategoryInitializer
+import static skop.data.DataInitializer.initCategories
 
 class BootStrap {
 
     def init = { servletContext ->
-        new CategoryInitializer().init()
+        initCategories(['Продукты', 'Кафе/рестораны', 'Транспорт', 'Развлечения'])
     }
     def destroy = {
     }

@@ -1,8 +1,9 @@
 package skop
 
 import grails.test.mixin.TestFor
-import skop.data.Money
 import spock.lang.Specification
+
+import static skop.data.Money.money
 
 /**
  * @author levry
@@ -13,8 +14,8 @@ class OperationSpec extends Specification {
     def "equals discharge currency"() {
         given:
         def operation = new Operation(
-                amount: new Money(value: 0, currency: Currency.getInstance(amountCurrency)),
-                discharge: new Money(value: 0, currency: Currency.getInstance(dischargeCurrency))
+            amount: money(0 ,amountCurrency),
+            discharge: money(0, dischargeCurrency)
         )
 
         expect:

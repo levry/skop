@@ -8,7 +8,7 @@ import skop.data.Money
  */
 class Operation {
 
-    @BindingFormat('yyyy-MM-dd')
+    @BindingFormat("yyyy-MM-dd'T'HH:mm")
     Date date
     Money amount
     Money discharge
