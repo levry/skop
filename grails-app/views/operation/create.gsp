@@ -33,7 +33,7 @@
             <label><g:message code="operation.amount.label" /></label>
             <div class="two fields">
                 <div class="field">
-                    <input type="number" name="amount.value" id="amount.value"
+                    <input type="number" step="0.01" name="amount.value" id="amount.value"
                            required placeholder="${message(code: 'operation.amount.label')}"
                            value="${this.operation?.amount?.value}">
                 </div>
@@ -47,7 +47,7 @@
             <label><g:message code="operation.discharge.label" /></label>
             <div class="two fields">
                 <div class="field">
-                    <input type="number" name="discharge.value" id="discharge.value"
+                    <input type="number" step="0.01" name="discharge.value" id="discharge.value"
                            required placeholder="${message(code: 'operation.discharge.label')}"
                            value="${this.operation?.discharge?.value}">
                 </div>

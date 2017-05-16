@@ -1,10 +1,15 @@
 package skop.data
 
+import grails.databinding.BindUsing
+
 /**
  * @author levry
  */
 class Money {
 
+    @BindUsing({obj, source ->
+        source['value'] as BigDecimal
+    })
     BigDecimal value
     Currency currency
 
