@@ -59,7 +59,7 @@
         </div>
         <div class="field">
             <label for="mcc"><g:message code="operation.mcc.label" /></label>
-            <g:select name="mcc" from="${skop.MCC.list()}" optionKey="id" optionValue="code"
+            <g:select name="mcc" from="${skop.MCC.list()}" optionKey="id" optionValue="codeWithCategory"
                       value="${this.operation?.mcc?.id}" />
         </div>
         <div class="field">

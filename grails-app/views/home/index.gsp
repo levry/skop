@@ -54,7 +54,7 @@
         <tfoot>
         <tr><th colspan="4">
             <div class="ui right floated pagination menu">
-                <g:paginate controller="home" action="index" max="5" total="${ops.totalCount?:0}" />
+                <g:paginate class="item" controller="home" action="index" max="5" total="${ops.totalCount?:0}" />
             </div>
         </th>
         </tr>

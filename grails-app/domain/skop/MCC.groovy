@@ -13,4 +13,7 @@ class MCC {
         category nullable: false
     }
 
+    String getCodeWithCategory() {
+        "${code} ($category.name)"
+    }
 }
