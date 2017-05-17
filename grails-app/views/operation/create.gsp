@@ -24,7 +24,7 @@
         </div>
     </g:hasErrors>
 
-    <g:form name="op-create" resource="${this.operation}" method="POST" class="ui form">
+    <g:form resource="${this.operation}" method="POST" class="ui form">
         <div class="field">
             <label for="date"><g:message code="operation.date.label" /></label>
             <input type="datetime-local" id="date" name="date" required value="${this.operation?.date?.format('yyyy-MM-dd\'T\'HH:mm')}" >
