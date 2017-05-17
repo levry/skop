@@ -28,15 +28,7 @@
     <g:form class="ui form" resource="${this.MCC}" method="PUT">
         <g:hiddenField name="version" value="${this.MCC?.version}" />
 
-        <div class="field">
-            <label for="code"><g:message code="MCC.code.label"/></label>
-            <input type="number" id="code" name="code" min="0" max="9999" required value="${this.MCC.code}">
-        </div>
-        <div class="field">
-            <label><g:message code="MCC.category.label" /></label>
-            <g:select class="ui dropdown" name="category" from="${skop.Category.list()}"
-                      value="${this.MCC.category.id}" optionKey="id" optionValue="name" />
-        </div>
+        <g:render template="mccFields" model="[mcc: this.MCC]" />
 
         <input class="ui button" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
     </g:form>
